@@ -8,7 +8,33 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
+&[data-scroll-status='top'] {
+  header.site-header-transparent {
+    &.site-header {
+      @include media-query($on-laptop) {
+        .page-link {
+          color: #f8f8f8;
+        }
+      }
+    }
+  }
 
+
+
+  footer.site-footer {
+    .site-footer-inner {
+      border-top: solid 1px #2f2f2f !important;
+      transition: 0s;
+    }
+  }
+}
+
+footer.site-footer {
+  .site-footer-inner {
+    border-top: solid 1px #2f2f2f !important;
+    transition: 0s;
+  }
+}
 
 /**
  * Basic styling
@@ -19,8 +45,8 @@ body {
   font-size: #{$base-font-size};
   font-display: swap;
   line-height: #{$base-line-height};
-  color: $text-color;
-  background-color: $background-color;
+  color: #bbb;
+  background-color: #0e0e0e;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
@@ -32,7 +58,10 @@ body {
   flex-direction: column;
 }
 
-
+*:not(pre) > code {
+  color: #bbb;
+  background-color: #454545;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -125,12 +154,13 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: #bbb;
+  border-left: 4px solid #484848;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
   font-style: italic;
+  background-color: #454545;
 
   > :last-child {
     margin-bottom: 0;
@@ -168,8 +198,15 @@ pre {
   }
 
   table, pre {
+    color: #9d9d9d;
     margin-bottom: 0;
+    th {
+      background-color: #050505;
+    }
 
+    tr:nth-child(even) {
+      background-color: #080808;
+    }
     .gutter, .code {
       padding: 6px;
       border: none;
@@ -177,6 +214,26 @@ pre {
   }
 }
 
+.site-header {
+  background-color: #090909;
+
+  .site-brand {
+    .site-brand-inner {
+      &, &:visited {
+        color: #f8f8f8;
+      }
+    }
+}
+
+.site-nav .page-link {
+  color: #f8f8f8;
+}
+
+.ct-language-dropdown {
+  color: #f8f8f8;
+  background-color: $dark-background-color;
+  box-shadow: 0 0 3px 1px #0000005b;
+}
 
 
 /**
