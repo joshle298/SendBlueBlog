@@ -293,14 +293,14 @@ html {
         margin-top: 3px;
         padding: 0px 3px;
         background-color: $brand-color;
-        color: #000;
+        color: #fff;
         font-size: 10px;
         font-weight: 600;
         border-radius: 2px;
       }
 
       &:visited:after {
-        background-color: #000;
+        background-color: #fff;
       }
     }
   }
