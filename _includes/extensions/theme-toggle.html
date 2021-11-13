@@ -10,15 +10,15 @@
 </div>
 
 {%- assign name = 'night_mode' -%}
-{%- include functions.html func='get_value' default='auto' -%}
+{%- include functions.html func='get_value' default='on' -%}
 {%- assign night_mode = return -%}
 
 <script>
   (function() {
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
-    var nightModeOption = ('{{ night_mode }}' || 'auto').toLowerCase();
-    var storage = nightModeOption === 'manual'
+    var nightModeOption = ('{{ night_mode }}' || 'on').toLowerCase();
+    var storage = nightModeOption === 'on'
         ? localStorage
         : sessionStorage;
     var themeData = loadThemeData();
@@ -47,45 +47,12 @@
       }, 50);
     }
 
-    function autoThemeToggle() {
-      // Next time point of theme toggle
-      var now = new Date();
-      var toggleAt = new Date();
-      var hours = now.getHours();
-      var nightShift = hours >= 19 || hours <=7;
-
-      if (nightShift) {
-        if (hours > 7) {
-          toggleAt.setDate(toggleAt.getDate() + 1);
-        }
-        toggleAt.setHours(7);
-      } else {
-        toggleAt.setHours(19);
-      }
-
-      toggleAt.setMinutes(0);
-      toggleAt.setSeconds(0);
-      toggleAt.setMilliseconds(0)
-
-      var delay = toggleAt.getTime() - now.getTime();
-
-      // auto toggle theme mode
-      setTimeout(function() {
-        handleThemeToggle(!nightShift);
-      }, delay);
-
-      return {
-        nightShift: nightShift,
-        toggleAt: toggleAt.getTime()
-      };
-    }
-
     // Listen the theme toggle event
     sw.addEventListener('change', function(event) {
       handleThemeToggle(event.target.checked);
     });
 
-    if (nightModeOption == 'auto') {
+    if (nightModeOption == 'on') {
       var data = autoThemeToggle();
 
       // Toggle theme by local setting
