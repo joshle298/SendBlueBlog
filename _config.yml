@@ -27,6 +27,8 @@
 title: SendBlue
 email: your-email@domain.com
 author: GitHub User
+permalink: /:title
+destination: ./_site/blog
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -45,9 +47,9 @@ copyright: "SendBlue Co (cleft) {currentYear}"
 description: >- # this means to ignore newlines until "baseurl:"
   This is SendBlue's Blog. The world's first iMessage API!
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-favicon: "" # the favicon for your site
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://sendblue.co" # the base hostname & protocol for your site, e.g. http://example.com
+favicon: "https://sendblue.co/assets/img/favicon.ico" # the favicon for your site
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
