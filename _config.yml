@@ -56,6 +56,7 @@ favicon: "https://sendblue.co/assets/img/favicon.ico" # the favicon for your sit
 yat:
   date_format: "%b %d, %Y"
 
+# banner_image: "assets/images/banners/home.png"
 # If you want more debug log, you can set true
 # debug: false
 
@@ -159,7 +160,7 @@ night_mode: "on"
 #   home:
 #     heading: " "
 #     subheading: " "
-#     banner: "assets/images/banners/meta.png"
+#     banner: "assets/images/banners/home.png"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
